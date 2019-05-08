@@ -13,7 +13,7 @@ class OLEDWindow:
         # x and width must be multiples of 4
         self.x = x
         self.y = y
-        self.width = (width/4)*4
+        self.width = (width//4)*4
         self.height = height
         self.oled = oled
         # Make and clear the screen buffer
@@ -27,8 +27,8 @@ class OLEDWindow:
         
     def set_pixel(self,x,y,color):
         color = color & 0x0F
-        ofs = y * self.width/2
-        ofs = ofs + x/2 # 2 pixels per byte across row
+        ofs = y * self.width//2
+        ofs = ofs + x//2 # 2 pixels per byte across row
         if x%2 ==0: # even
             v = self.screenBuffer[ofs] & 0x0F
             v = v | (color<<4)
@@ -41,7 +41,7 @@ class OLEDWindow:
         pos = offs
         for yy in range(height):
             ox = x
-            for xx in range(width/8):
+            for xx in range(width//8):
                 mask = 128
                 for pp in range(8):
                     if((data[pos] & mask)>0):
@@ -58,7 +58,7 @@ class OLEDWindow:
         pos = offs
         for yy in range(height):
             ox = x
-            for xx in range(width/8):
+            for xx in range(width//8):
                 mask = 128
                 for pp in range(8):
                     if((data[pos] & mask)>0):

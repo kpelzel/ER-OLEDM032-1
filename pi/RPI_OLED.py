@@ -635,8 +635,8 @@ def adj_Contrast():
     while(True):
         number = (int(input("Enter a contrast value: ")))
     
-        number1=number/100;
-        number2=number%100/10;
+        number1=number//100;
+        number2=number%100//10;
         number3=number%100%10;
         Write_number(number1,0);
         Write_number(number2,2);

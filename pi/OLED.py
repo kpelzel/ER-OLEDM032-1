@@ -112,10 +112,10 @@ class OLED:
     
     def set_data_window(self,x,y,width,height):
         
-        x = x / 4 # Column address is 4-pixel-groups (2 bytes)
+        x = x // 4 # Column address is 4-pixel-groups (2 bytes)
                   # Pass in x=0,4,8, etc
                   
-        width = width / 4 # With limited to 4-pixel increments
+        width = width // 4 # With limited to 4-pixel increments
                           # Pass in width=4,8, etc
         
         self.Write_Instruction(0x75)
