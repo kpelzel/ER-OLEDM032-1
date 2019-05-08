@@ -626,6 +626,25 @@ def Write_number(value, column):
         Write_Instruction(0x5C); 
         Data_processing(numberImages[16*value+i])
     
+
+def sweep_Contrast():
+        #Display_Picture(pic1)
+    displayPreprocessedPicture(pic1Processed)
+    DrawString(6,0," Contrast level")
+    
+    for i in range(250):
+        number = i
+    
+        number1=number//100;
+        number2=number%100//10;
+        number3=number%100%10;
+        Write_number(number1,0);
+        Write_number(number2,2);
+        Write_number(number3,4);    
+    
+        Write_Instruction(0xC1)
+        Write_Data(number)    
+
 def adj_Contrast():
     
     #Display_Picture(pic1)
@@ -772,6 +791,9 @@ def main():
     Display_Chess(0x00,0x00) # clear display
     time.sleep(1.0)
     
+    print("Contrast Sweep ...")
+    sweep_Contrast()
+
     print("Adjust contrast ...")    
     adj_Contrast()
 
