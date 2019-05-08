@@ -872,8 +872,8 @@ def main():
     Initial()
 
     print("Picture 3 ...")
-    #Display_Picture(pic1)
-    displayPreprocessedPicture(pic1Processed)
+    #Display_Picture(pic3)
+    displayPreprocessedPicture(pic3Processed)
 
 
     # print("All pixels on/off ...")
