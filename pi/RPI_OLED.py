@@ -630,7 +630,6 @@ def Write_number(value, column):
 def sweep_Contrast():
         #Display_Picture(pic1)
     displayPreprocessedPicture(pic1Processed)
-    DrawString(6,0," Contrast level")
     
     for i in range(250):
         number = i
