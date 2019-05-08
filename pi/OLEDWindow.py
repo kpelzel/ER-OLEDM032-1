@@ -39,11 +39,11 @@ class OLEDWindow:
 
     def draw_bw_image(self,x,y,width,height,color,data,offs):
         pos = offs
-        for yy in xrange(height):
+        for yy in range(height):
             ox = x
-            for xx in xrange(width/8):
+            for xx in range(width/8):
                 mask = 128
-                for pp in xrange(8):
+                for pp in range(8):
                     if((data[pos] & mask)>0):
                         self.set_pixel(x,y,color)
                     else:
@@ -56,11 +56,11 @@ class OLEDWindow:
             
     def draw_big_bw_image(self,x,y,width,height,color,data,offs):
         pos = offs
-        for yy in xrange(height):
+        for yy in range(height):
             ox = x
-            for xx in xrange(width/8):
+            for xx in range(width/8):
                 mask = 128
-                for pp in xrange(8):
+                for pp in range(8):
                     if((data[pos] & mask)>0):
                         self.set_pixel(x,y,color)
                         self.set_pixel(x+1,y,color)
@@ -121,10 +121,10 @@ class OLEDWindow:
                 error += dx       
     
     def draw_rectangle(self,x,y,width,height, color):
-        for xx in xrange(width):
+        for xx in range(width):
             self.set_pixel(x+xx,y,color)
             self.set_pixel(x+xx,y+height-1, color)
-        for yy in xrange(height):
+        for yy in range(height):
             self.set_pixel(x,y+yy,color)
             self.set_pixel(x+width-1,y+yy,color)
 
