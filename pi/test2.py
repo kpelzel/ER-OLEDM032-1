@@ -13,6 +13,6 @@ for i in range(256):
 window_one.draw_screen_buffer()
 
 for i in range(256):
-    if i % 15 == 0:
-        window_one.set_pixel(i,1,1)
+    if i % 16 == 0:
+        window_one.set_pixel(i,1,16)
 window_one.draw_screen_buffer()
