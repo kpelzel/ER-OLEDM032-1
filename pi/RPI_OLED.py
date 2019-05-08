@@ -638,14 +638,7 @@ def sweep_Contrast():
             increasing = False
         elif number == 0:
             increasing = True
-    
-        #number1=number//100;
-        #number2=number%100//10;
-        #number3=number%100%10;
-        #Write_number(number1,0);
-        #Write_number(number2,2);
-        #Write_number(number3,4);    
-    
+        
         Write_Instruction(0xC1)
         Write_Data(number)    
         if increasing:
