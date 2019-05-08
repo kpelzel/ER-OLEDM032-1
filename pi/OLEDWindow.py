@@ -17,7 +17,7 @@ class OLEDWindow:
         self.height = height
         self.oled = oled
         # Make and clear the screen buffer
-        self.screenBuffer = [0]*(width/2)*height
+        self.screenBuffer = [0]*(width//2)*height
         
     def draw_screen_buffer(self):
         self.oled.set_data_window(self.x,self.y,self.width,self.height)        
